@@ -1,7 +1,7 @@
 import os, requests, subprocess, sys
 
 API_PATH = 'https://corporateclash.net/api/v1/login/'       # the API path given by Corporate Clash
-APP_PATH = r'C:\Users\erich\AppData\Local\Corporate Clash'  # the location of the CorporateClash.exe game executable
+APP_PATH = r'C:\Users\USER\AppData\Local\Corporate Clash'  # the location of the CorporateClash.exe game executable
 
 TT_GS = ''  # Toontown Gameserver: a gameserver given by the login server to connect to
 TT_CK = ''  # Toontown Cookie: a randomly generated cookie given by the login server to play
