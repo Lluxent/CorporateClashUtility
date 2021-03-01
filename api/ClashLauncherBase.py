@@ -1,3 +1,6 @@
+# A script to log onto the game without using the official launcher
+# Can be run command line; change 'USER' in APP_PATH to your actual user
+
 import os, requests, subprocess, sys
 
 API_PATH = 'https://corporateclash.net/api/v1/login/'       # the API path given by Corporate Clash
