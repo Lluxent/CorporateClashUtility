@@ -6,13 +6,18 @@ class BattleState(enum.Enum):
     targetAlly = 22     # choosing a toon to target
     cancelable = 23     # after target selection, able to cancel ('waiting for other players' state)
 
+    speedchat = 30
+
 _state = BattleState.battle
+_previousState = BattleState.battle
 
 def updateState(newState=BattleState.battle):
     "Update the current state to another state."
     global _state
+    global _previousState
     if newState == _state:
         return    
+    _previousState = _state
     _state = newState
     print('State: Changed to ' + newState.name)
 
@@ -118,7 +123,9 @@ Actions = { # an action is defined by coordinates to select, then the next state
     'pass'  :   [0.235, 0.375, BattleState.cancelable],
 
     'back'  :   [0.500, 0.650, BattleState.battle],
-    'lock'  :   [0.580, 0.575, BattleState.cancelable]
+    'lock'  :   [0.580, 0.575, BattleState.cancelable],
+
+    'say'   :   [0.023, 0.059, BattleState.speedchat]
 }
 
 Targets = {
@@ -158,6 +165,12 @@ def doAction(param='back'):
             moveCursor(var, 0.325, True)
         updateState(BattleState.cancelable)
         return
+    elif _state == BattleState.speedchat:
+        print('Sending \'' + param + '\' to Speedchat')
+        moveCursor(0.023, 0.059, True)
+        ag.write(param)
+        ag.press('enter')        
+        updateState(_previousState)
     else:
         print('Action \'' + param + '\' not found. Skipping...')
     return
