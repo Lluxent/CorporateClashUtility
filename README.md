@@ -1,2 +1,2 @@
 # CorporateClashUtility
-A repository containing various tools and scripts for Corporate Clash, a fan-made revival of Disney's Toontown Online.
+A repository containing various tools and information for Corporate Clash, a fan-made revival of Disney's Toontown Online.
