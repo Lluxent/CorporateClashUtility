@@ -28,14 +28,13 @@ def recognize_speech_from_mic(recognizer, microphone):
 
     # set up the response object
     response = {
-        "success": True,
-        "error": None,
-        "transcription": None
+        "success"       : True,
+        "error"         : None,
+        "transcription" : None
     }
 
     # try recognizing the speech in the recording
-    # if a RequestError or UnknownValueError exception is caught,
-    #     update the response object accordingly
+    # if a RequestError or UnknownValueError exception is caught, update the response object accordingly
     try:
         response["transcription"] = recognizer.recognize_google(audio)
     except sr.RequestError:
