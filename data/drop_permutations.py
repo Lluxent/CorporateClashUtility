@@ -1,3 +1,6 @@
+# a meme 'calculated' list of all possible drop permutations, including duplicates
+# lol
+
 import math
 
 drops = {
