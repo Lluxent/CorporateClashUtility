@@ -174,7 +174,3 @@ def doAction(param='back'):
     else:
         print('Action \'' + param + '\' not found. Skipping...')
     return
-
-while(True):
-    x = input('> ')
-    doAction(x)
